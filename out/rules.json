@@ -1,0 +1,2703 @@
+[
+ {
+  "rule_id": "PL.1",
+  "manual_rule_id": "PL.1",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.7 Poly2",
+  "title": "Poly2 interconnect minimum width (outside PLFUSE)",
+  "rule_type": "width",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   },
+   {
+    "name": "PLFUSE",
+    "role": "marker",
+    "gds_layer": 125,
+    "gds_datatype": 5,
+    "deck_name": "plfuse"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "PL.1#1",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 3.3V",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.18,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "3.3V",
+     "region": "outside PLFUSE"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L3",
+      "quote": "Interconnect Width (outside PLFUSE) | 0.18"
+     },
+     {
+      "chunk_id": "16_Poly2_42:L2",
+      "quote": "3.3V | 5V | 6V"
+     }
+    ]
+   },
+   {
+    "id": "PL.1#2",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 5V",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.2,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "region": "outside PLFUSE"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L3",
+      "quote": "0.18 | 0.2 | 0.2"
+     }
+    ]
+   },
+   {
+    "id": "PL.1#3",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 6V",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.2,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "region": "outside PLFUSE"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L3",
+      "quote": "0.18 | 0.2 | 0.2"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "Inside PLFUSE the separate rule PL.1a applies",
+    "kind": "scope_limit",
+    "marker_layer": "PLFUSE",
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L3",
+      "quote": "(outside PLFUSE)"
+     }
+    ]
+   },
+   {
+    "text": "Inside YMTP_MK interconnect width is 0.13 (3.3V), Y.PL.1",
+    "kind": "region_override",
+    "marker_layer": "YMTP_MK",
+    "override_value": 0.13,
+    "evidence": [
+     {
+      "chunk_id": "45_YMTP_MK_Mark_121:L9",
+      "quote": "Y.PL.1 | Interconnect Width (inside YMTP_MK) | 0.13"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "PL.1a governs width inside PLFUSE",
+    "target": "PL.1a",
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L3",
+      "quote": "outside PLFUSE"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "16_Poly2_42:L3",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 3,
+    "line_end": 3,
+    "sha256": "ef2bca235a98804d",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L3-L3",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "16_Poly2_42:L2",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 2,
+    "line_end": 2,
+    "sha256": "4c4e9e379d6f6984",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L2-L2",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L9",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "line_start": 9,
+    "line_end": 9,
+    "sha256": "8f2b7b47ca9176dd",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L9-L9",
+    "section": "10.13 YMTP_MK Mark Layer Rules"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "c27d2672f78d40d6",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "",
+   "baseline_numbers": [
+    0.18,
+    0.2
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "PL.2",
+  "manual_rule_id": "PL.2",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.7 Poly2",
+  "title": "Poly2 gate width (channel length)",
+  "rule_type": "gate_length",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   },
+   {
+    "name": "COMP",
+    "role": "secondary",
+    "gds_layer": 22,
+    "gds_datatype": 0,
+    "deck_name": "comp"
+   },
+   {
+    "name": "Dualgate",
+    "role": "marker",
+    "gds_layer": 55,
+    "gds_datatype": 0,
+    "deck_name": "dualgate"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "PL.2#1",
+    "clause": "main",
+    "description": "3.3V NMOS and PMOS channel length",
+    "check": "min_gate_length",
+    "operator": ">=",
+    "value": 0.28,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "3.3V"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L5",
+      "quote": "Gate Width (Channel Length) 1 | 0.28"
+     },
+     {
+      "chunk_id": "drm_07_08:L4",
+      "quote": "The min. channel length for both 3.3V NMOS and PMOS are 0.28um"
+     }
+    ]
+   },
+   {
+    "id": "PL.2#2",
+    "clause": "main",
+    "description": "5V NMOS channel length",
+    "check": "min_gate_length",
+    "operator": ">=",
+    "value": 0.6,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "device_polarity": "N"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L5",
+      "quote": "0.6/0.5"
+     },
+     {
+      "chunk_id": "drm_07_08:L16",
+      "quote": "for 5V are 0.6um and 0.5um"
+     }
+    ]
+   },
+   {
+    "id": "PL.2#3",
+    "clause": "main",
+    "description": "5V PMOS channel length",
+    "check": "min_gate_length",
+    "operator": ">=",
+    "value": 0.5,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "device_polarity": "P"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L5",
+      "quote": "0.6/0.5"
+     },
+     {
+      "chunk_id": "drm_07_08:L16",
+      "quote": "for 5V are 0.6um and 0.5um"
+     }
+    ]
+   },
+   {
+    "id": "PL.2#4",
+    "clause": "main",
+    "description": "6V NMOS channel length",
+    "check": "min_gate_length",
+    "operator": ">=",
+    "value": 0.7,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "device_polarity": "N"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L5",
+      "quote": "0.7/0.55"
+     },
+     {
+      "chunk_id": "drm_07_08:L16",
+      "quote": "6V NNMOS and PMOS are 0.7um and 0.55um"
+     }
+    ]
+   },
+   {
+    "id": "PL.2#5",
+    "clause": "main",
+    "description": "6V PMOS channel length",
+    "check": "min_gate_length",
+    "operator": ">=",
+    "value": 0.55,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "device_polarity": "P"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L5",
+      "quote": "0.7/0.55"
+     },
+     {
+      "chunk_id": "drm_07_08:L16",
+      "quote": "6V NNMOS and PMOS are 0.7um and 0.55um"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "OTP cells (OTP_MK): O.PL.2 min poly2 width 0.22",
+    "kind": "region_override",
+    "marker_layer": "OTP_MK",
+    "override_value": 0.22,
+    "evidence": [
+     {
+      "chunk_id": "41_OTP_MK_Mark_106:L6",
+      "quote": "O.PL.2 | Min. poly2 width | 0.22"
+     }
+    ]
+   },
+   {
+    "text": "YMTP cells (YMTP_MK): Y.PL.2 gate width 0.13 (3.3V) / 0.47 (5V/6V)",
+    "kind": "region_override",
+    "marker_layer": "YMTP_MK",
+    "override_value": 0.13,
+    "evidence": [
+     {
+      "chunk_id": "45_YMTP_MK_Mark_121:L10",
+      "quote": "Y.PL.2 | Gate Width (Channel Length) (inside YMTP_MK) | 0.13 | 0.47"
+     }
+    ]
+   },
+   {
+    "text": "NeoEE cells (NEO_EE_MK): EE.PL.2_LV not applicable",
+    "kind": "region_override",
+    "marker_layer": "NEO_EE_MK",
+    "evidence": [
+     {
+      "chunk_id": "47_NEO_EE_MK_124:L25",
+      "quote": "EE.PL.2_LV | Min gate width (Channel length) = NA"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "Footnote 1: 5V/6V NMOS/PMOS channel lengths",
+    "target": "Poly2 note 1",
+    "evidence": [
+     {
+      "chunk_id": "drm_07_08:L16",
+      "quote": "1. The min. channel length for 6V NNMOS and PMOS"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "16_Poly2_42:L5",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 5,
+    "line_end": 5,
+    "sha256": "ba144aafe888693c",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L5-L5",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "drm_07_08:L4",
+    "kind": "section_text",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "line_start": 4,
+    "line_end": 4,
+    "sha256": "f888f4ba65204b81",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L4-L4",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "drm_07_08:L16",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "line_start": 16,
+    "line_end": 16,
+    "sha256": "e6781fc4f4ec244b",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L16-L16",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "41_OTP_MK_Mark_106:L6",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv",
+    "line_start": 6,
+    "line_end": 6,
+    "sha256": "31ef5c660c2939c1",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv#L6-L6",
+    "section": "10.10 OTP_MK Mark Layer"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L10",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "07cdedeb293b89a7",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L10-L10",
+    "section": "10.13 YMTP_MK Mark Layer Rules"
+   },
+   {
+    "chunk_id": "47_NEO_EE_MK_124:L25",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/47_NEO_EE_MK_124.csv",
+    "line_start": 25,
+    "line_end": 25,
+    "sha256": "fb5be75f3fdd69e1",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/47_NEO_EE_MK_124.csv#L25-L25",
+    "section": "10.15 NEO_EE_MK Layer"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "b371dffd7d3515cd",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "'a/b' cells interpreted as NMOS/PMOS per section note 1.",
+   "baseline_numbers": [
+    0.28,
+    0.5,
+    0.55,
+    0.6,
+    0.7
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "PL.3b",
+  "manual_rule_id": "PL.3b",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.7 Poly2",
+  "title": "Poly2 space on COMP for low active sheet resistivity (guideline)",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   },
+   {
+    "name": "COMP",
+    "role": "secondary",
+    "gds_layer": 22,
+    "gds_datatype": 0,
+    "deck_name": "comp"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "PL.3b#1",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 3.3V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.26,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "3.3V"
+    },
+    "guideline": true,
+    "coded_expected": false,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L15",
+      "quote": "for low active sheet resistivity (guideline) | 0.26"
+     },
+     {
+      "chunk_id": "70_not_coded_rules_187:L8",
+      "quote": "PL.3b"
+     }
+    ]
+   },
+   {
+    "id": "PL.3b#2",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 5V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.4,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "5V"
+    },
+    "guideline": true,
+    "coded_expected": false,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L15",
+      "quote": "0.26 | 0.4 | 0.4"
+     }
+    ]
+   },
+   {
+    "id": "PL.3b#3",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 6V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.4,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "6V"
+    },
+    "guideline": true,
+    "coded_expected": false,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L15",
+      "quote": "0.26 | 0.4 | 0.4"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "Listed in Appendix B as not coded (guideline)",
+    "kind": "not_coded",
+    "evidence": [
+     {
+      "chunk_id": "70_not_coded_rules_187:L8",
+      "quote": "Poly 2 space on active for low active sheet resistivity (guideline)"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "Appendix B: Rules not coded",
+    "target": "Appendix B",
+    "evidence": [
+     {
+      "chunk_id": "drm_07_08:L12",
+      "quote": "Rules not coded"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "16_Poly2_42:L15",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 15,
+    "line_end": 15,
+    "sha256": "e70bf7c5d4af1db3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L15-L15",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L8",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "line_start": 8,
+    "line_end": 8,
+    "sha256": "c3c716d393610ccc",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L8-L8",
+    "section": "Appendix B: Rules not coded"
+   },
+   {
+    "chunk_id": "drm_07_08:L12",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "line_start": 12,
+    "line_end": 12,
+    "sha256": "39b8627b33c04bcf",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L12-L12",
+    "section": "7.7 Poly2"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "c4a568c6c0abad6d",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "Asterisk in this section means 'not coded'.",
+   "baseline_numbers": [
+    0.26,
+    0.4
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "PL.5b",
+  "manual_rule_id": "PL.5b",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.7 Poly2",
+  "title": "Space from field Poly2 to related COMP",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   },
+   {
+    "name": "COMP",
+    "role": "secondary",
+    "gds_layer": 22,
+    "gds_datatype": 0,
+    "deck_name": "comp"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "PL.5b#1",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 3.3V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.1,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "3.3V",
+     "relation": "related COMP"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L20",
+      "quote": "Space from field Poly2 to related COMP | 0.1"
+     }
+    ]
+   },
+   {
+    "id": "PL.5b#2",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 5V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.3,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "relation": "related COMP"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L20",
+      "quote": "0.1 | 0.3 | 0.3"
+     }
+    ]
+   },
+   {
+    "id": "PL.5b#3",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 6V",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.3,
+    "unit": "um",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "relation": "related COMP"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L20",
+      "quote": "0.1 | 0.3 | 0.3"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "OTP cells: O.PL.5b = 0 (marked not coded)",
+    "kind": "region_override",
+    "marker_layer": "OTP_MK",
+    "override_value": 0,
+    "evidence": [
+     {
+      "chunk_id": "41_OTP_MK_Mark_106:L10",
+      "quote": "*O.PL.5b | Min. space from field Poly2 to related COMP | 0"
+     }
+    ]
+   },
+   {
+    "text": "YMTP cells: Y.PL.5b = 0.04 (3.3V) / 0.2 (5V/6V)",
+    "kind": "region_override",
+    "marker_layer": "YMTP_MK",
+    "override_value": 0.04,
+    "evidence": [
+     {
+      "chunk_id": "45_YMTP_MK_Mark_121:L15",
+      "quote": "Y.PL.5b | Space from field Poly2 to related COMP (inside YMTP_MK) | 0.04"
+     }
+    ]
+   },
+   {
+    "text": "5V SRAM core: S.PL.5b_MV = 0.12",
+    "kind": "region_override",
+    "marker_layer": "SramCore",
+    "override_value": 0.12,
+    "evidence": [
+     {
+      "chunk_id": "48_SRAM1_126:L12",
+      "quote": "S.PL.5b_MV | Space from field Poly2 to related COMP | 0.12"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "Companion rule PL.5a (unrelated COMP) has the same values",
+    "target": "PL.5a",
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L20",
+      "quote": "related COMP"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "16_Poly2_42:L20",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 20,
+    "line_end": 20,
+    "sha256": "2395d7e86d8d87ba",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L20-L20",
+    "section": "7.7 Poly2"
+   },
+   {
+    "chunk_id": "41_OTP_MK_Mark_106:L10",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "c73a7272c2e4534c",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv#L10-L10",
+    "section": "10.10 OTP_MK Mark Layer"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L15",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "line_start": 15,
+    "line_end": 15,
+    "sha256": "d60fdf85c4d86325",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L15-L15",
+    "section": "10.13 YMTP_MK Mark Layer Rules"
+   },
+   {
+    "chunk_id": "48_SRAM1_126:L12",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM1_126.csv",
+    "line_start": 12,
+    "line_end": 12,
+    "sha256": "d6dc83a0d331b01c",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM1_126.csv#L12-L12",
+    "section": "11.1 5V SRAM"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "7fa2f5604eaa4d99",
+   "stale": false,
+   "confidence": 0.85,
+   "notes": "'Related' vs 'unrelated' COMP is a connectivity/topology distinction (PL.5a vs PL.5b); the deck needs a way to tell them apart.",
+   "baseline_numbers": [
+    0.1,
+    0.3
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "PL.8",
+  "manual_rule_id": "PL.8",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.7 Poly2",
+  "title": "Poly2 minimum density over die",
+  "rule_type": "density",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "PL.8#1",
+    "clause": "main",
+    "description": "Poly2 coverage over the entire die",
+    "check": "min_density",
+    "operator": ">=",
+    "value": 14,
+    "unit": "%",
+    "applies_when": {
+     "region": "entire die"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L23",
+      "quote": "Poly2 coverage over the entire die shall be >= 14%"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [
+   {
+    "text": "Dummy poly2 must be added to meet density",
+    "target": "Dummy Poly2 rules",
+    "evidence": [
+     {
+      "chunk_id": "16_Poly2_42:L23",
+      "quote": "Dummy poly2 lines must be added"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "16_Poly2_42:L23",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "line_start": 23,
+    "line_end": 25,
+    "sha256": "f09bfb170574182d",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L23-L25",
+    "section": "7.7 Poly2"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "a21bca7f50b84715",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "",
+   "baseline_numbers": [],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "CO.1",
+  "manual_rule_id": "CO.1",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.12 Contact",
+  "title": "Contact min/max size",
+  "rule_type": "exact_size",
+  "layers": [
+   {
+    "name": "Contact",
+    "role": "primary",
+    "gds_layer": 33,
+    "gds_datatype": 0,
+    "deck_name": "contact"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "CO.1#1",
+    "clause": "main",
+    "description": "Contact edge length is exactly 0.22",
+    "check": "exact_size",
+    "operator": "==",
+    "value": 0.22,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L3",
+      "quote": "CO.1 | Min/max contact size | 0.22"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "21_Contact_56:L3",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "line_start": 3,
+    "line_end": 3,
+    "sha256": "b557eafc61b198fb",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L3-L3",
+    "section": "7.12 Contact"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "638d54c91a85a428",
+   "stale": false,
+   "confidence": 0.97,
+   "notes": "",
+   "baseline_numbers": [
+    0.22
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "CO.2a",
+  "manual_rule_id": "CO.2a",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.12 Contact",
+  "title": "Contact minimum space",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "Contact",
+    "role": "primary",
+    "gds_layer": 33,
+    "gds_datatype": 0,
+    "deck_name": "contact"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "CO.2a#1",
+    "clause": "main",
+    "description": "Contact to contact space",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.25,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L4",
+      "quote": "CO.2a | Space | 0.25"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [
+   {
+    "text": "CO.2b applies in 4x4 or larger arrays",
+    "target": "CO.2b",
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L4",
+      "quote": "Space"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "21_Contact_56:L4",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "line_start": 4,
+    "line_end": 4,
+    "sha256": "1ff0a062da340620",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L4-L4",
+    "section": "7.12 Contact"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "47c4ae744f3af93a",
+   "stale": false,
+   "confidence": 0.97,
+   "notes": "",
+   "baseline_numbers": [
+    0.25
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "CO.3",
+  "manual_rule_id": "CO.3",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.12 Contact",
+  "title": "Poly2 overlap of contact",
+  "rule_type": "enclosure",
+  "layers": [
+   {
+    "name": "Poly2",
+    "role": "primary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   },
+   {
+    "name": "Contact",
+    "role": "secondary",
+    "gds_layer": 33,
+    "gds_datatype": 0,
+    "deck_name": "contact"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "CO.3#1",
+    "clause": "main",
+    "description": "Poly2 enclosure of contact",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.07,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L6",
+      "quote": "CO.3 | Poly2 overlap of contact | 0.07"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "3.3V SRAM core: S.CO.3_LV = 0.04",
+    "kind": "region_override",
+    "marker_layer": "SramCore",
+    "override_value": 0.04,
+    "evidence": [
+     {
+      "chunk_id": "48_SRAM3_128:L6",
+      "quote": "S.CO.3_LV | Poly2 overlap of contact | 0.04"
+     }
+    ]
+   }
+  ],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "21_Contact_56:L6",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "line_start": 6,
+    "line_end": 6,
+    "sha256": "9ba74c16010445e0",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L6-L6",
+    "section": "7.12 Contact"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L6",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "line_start": 6,
+    "line_end": 6,
+    "sha256": "65e840cb230c7ceb",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L6-L6",
+    "section": "11.2 3.3V SRAM"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "2b4cb5cddff747dc",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "",
+   "baseline_numbers": [
+    0.07
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "CO.6",
+  "manual_rule_id": "CO.6",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.12 Contact",
+  "title": "Metal1 overlap of contact",
+  "rule_type": "enclosure",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   },
+   {
+    "name": "Contact",
+    "role": "secondary",
+    "gds_layer": 33,
+    "gds_datatype": 0,
+    "deck_name": "contact"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "CO.6#1",
+    "clause": "main",
+    "description": "Metal1 overlap of contact",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.005,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "Metal1 overlap of contact"
+     },
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "0.005"
+     }
+    ]
+   },
+   {
+    "id": "CO.6#2",
+    "clause": "i",
+    "description": "Metal1 (< 0.34um) end-of-line overlap of contact",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.06,
+    "unit": "um",
+    "applies_when": {
+     "metal_width": "< 0.34um",
+     "edge": "end-of-line",
+     "excluding": "metal branches shorter than 0.24um"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "I) Metal1 (< 0.34μm) end-of-line overlap (1)"
+     },
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "0.005 0.06"
+     },
+     {
+      "chunk_id": "drm_07_13:L13",
+      "quote": "excluding metal branches shorter than 0.24μm"
+     }
+    ]
+   },
+   {
+    "id": "CO.6#3",
+    "clause": "ii",
+    "description": "If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.06,
+    "unit": "um",
+    "applies_when": {
+     "condition": "one side overlap < 0.04um"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "II) If Metal1 overlaps contact by < 0.04μm on one side, adjacent metal1 edges overlap"
+     },
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "0.06 0.06"
+     }
+    ]
+   },
+   {
+    "id": "CO.6#4",
+    "clause": "iii",
+    "description": "Minimum Metal1 overlap of contact on all sides (guideline)",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.12,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": true,
+    "coded_expected": false,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L10",
+      "quote": "variation* (guideline) | 0.005 0.06 0.06 0.12"
+     },
+     {
+      "chunk_id": "70_not_coded_rules_187:L10",
+      "quote": "CO.6iii"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "3.3V SRAM core: S.CO.6_ii_LV = 0.02",
+    "kind": "region_override",
+    "marker_layer": "SramCore",
+    "override_value": 0.02,
+    "evidence": [
+     {
+      "chunk_id": "48_SRAM3_128:L8",
+      "quote": "S.CO.6_ii_LV"
+     },
+     {
+      "chunk_id": "48_SRAM3_128:L8",
+      "quote": "0.02"
+     }
+    ]
+   },
+   {
+    "text": "Clause iii is a guideline, not coded (Appendix B)",
+    "kind": "not_coded",
+    "evidence": [
+     {
+      "chunk_id": "70_not_coded_rules_187:L10",
+      "quote": "Minimum metal 1 overlap of contact on all sides of min. contact resistance variation (guideline)"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "Note 1: EOL clause applies to < 0.34um lines excluding branches shorter than 0.24um",
+    "target": "Contact note 1",
+    "evidence": [
+     {
+      "chunk_id": "drm_07_13:L13",
+      "quote": "1. Applies to all < 0.34μm wide metal lines"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "21_Contact_56:L10",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "line_start": 10,
+    "line_end": 22,
+    "sha256": "f6a116076828f278",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L10-L22",
+    "section": "7.12 Contact"
+   },
+   {
+    "chunk_id": "drm_07_13:L13",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_13.rst",
+    "line_start": 13,
+    "line_end": 13,
+    "sha256": "a99afb7a20235f37",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_13.rst#L13-L13",
+    "section": "7.12 Contact"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L10",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "84719ba518cabf58",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L10-L10",
+    "section": "Appendix B: Rules not coded"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L8",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "line_start": 8,
+    "line_end": 8,
+    "sha256": "e3b356d59051e962",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L8-L8",
+    "section": "11.2 3.3V SRAM"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "16e0811d8d8410d7",
+   "stale": false,
+   "confidence": 0.85,
+   "notes": "Values in the cell map to the description lines in order: main, I, II, III.",
+   "baseline_numbers": [
+    0.005,
+    0.06,
+    0.12
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "CO.11",
+  "manual_rule_id": "CO.11",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.12 Contact",
+  "title": "Contact on field oxide forbidden",
+  "rule_type": "forbidden",
+  "layers": [
+   {
+    "name": "Contact",
+    "role": "primary",
+    "gds_layer": 33,
+    "gds_datatype": 0,
+    "deck_name": "contact"
+   },
+   {
+    "name": "COMP",
+    "role": "secondary",
+    "gds_layer": 22,
+    "gds_datatype": 0,
+    "deck_name": "comp"
+   },
+   {
+    "name": "Poly2",
+    "role": "secondary",
+    "gds_layer": 30,
+    "gds_datatype": 0,
+    "deck_name": "poly2"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "CO.11#1",
+    "clause": "main",
+    "description": "Contact must land on COMP or Poly2 (not on field oxide)",
+    "check": "forbidden",
+    "operator": "forbidden",
+    "value": null,
+    "unit": null,
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "21_Contact_56:L27",
+      "quote": "Contact on field oxide is forbidden."
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "21_Contact_56:L27",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "line_start": 27,
+    "line_end": 27,
+    "sha256": "e3afcd4dd67f70f7",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L27-L27",
+    "section": "7.12 Contact"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "3210001fea9c1e62",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "Field oxide interpreted as 'outside COMP and outside Poly2'.",
+   "baseline_numbers": [],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "M1.1",
+  "manual_rule_id": "Mn.1",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.13 Metaln (where n = 1 to 5)",
+  "title": "Metal1 minimum width",
+  "rule_type": "width",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "M1.1#1",
+    "clause": "main",
+    "description": "Metal1 width",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.23,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L3",
+      "quote": "0.23 (n = 1)"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "3.3V SRAM core: S.M1.1_LV width 0.22",
+    "kind": "region_override",
+    "marker_layer": "SramCore",
+    "override_value": 0.22,
+    "evidence": [
+     {
+      "chunk_id": "48_SRAM3_128:L9",
+      "quote": "S.M1.1_LV | Width | 0.22"
+     }
+    ]
+   }
+  ],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "22_Metaln_58:L3",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "line_start": 3,
+    "line_end": 5,
+    "sha256": "34294a67581da861",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L3-L5",
+    "section": "7.13 Metaln (where n = 1 to 5)"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L9",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "line_start": 9,
+    "line_end": 9,
+    "sha256": "9f122df614e47cee",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L9-L9",
+    "section": "11.2 3.3V SRAM"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "b1779413662b737e",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "Value for 2<=n<=5 (0.28) dropped for n=1.",
+   "baseline_numbers": [
+    0.23,
+    0.28
+   ],
+   "unused_numbers": [
+    0.28
+   ]
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "M1.2a",
+  "manual_rule_id": "Mn.2a",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.13 Metaln (where n = 1 to 5)",
+  "title": "Metal1 minimum space",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "M1.2a#1",
+    "clause": "main",
+    "description": "Metal1 space",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.23,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L6",
+      "quote": "Mn.2a | Space | 0.23 (n = 1)"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "22_Metaln_58:L6",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "line_start": 6,
+    "line_end": 8,
+    "sha256": "3edabd1fc2c4d2e2",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L6-L8",
+    "section": "7.13 Metaln (where n = 1 to 5)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "7d55de09f33c4fa5",
+   "stale": false,
+   "confidence": 0.95,
+   "notes": "",
+   "baseline_numbers": [
+    0.23,
+    0.28
+   ],
+   "unused_numbers": [
+    0.28
+   ]
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "M1.2b",
+  "manual_rule_id": "Mn.2b",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.13 Metaln (where n = 1 to 5)",
+  "title": "Metal1 space to wide Metal1",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "M1.2b#1",
+    "clause": "main",
+    "description": "Space to wide Metal1 (length & width > 10um)",
+    "check": "min_space_wide",
+    "operator": ">=",
+    "value": 0.3,
+    "unit": "um",
+    "applies_when": {
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L9",
+      "quote": "Space to wide Metaln (length & width > 10μm) | 0.3"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "22_Metaln_58:L9",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "line_start": 9,
+    "line_end": 9,
+    "sha256": "0138fdc51934f6e3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L9-L9",
+    "section": "7.13 Metaln (where n = 1 to 5)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "bffdae70059a36ad",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "Wide-metal qualifier is strict (> 10um).",
+   "baseline_numbers": [
+    0.3
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "M1.3",
+  "manual_rule_id": "Mn.3",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.13 Metaln (where n = 1 to 5)",
+  "title": "Metal1 minimum area",
+  "rule_type": "area",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "M1.3#1",
+    "clause": "main",
+    "description": "Minimum Metal1 area",
+    "check": "min_area",
+    "operator": ">=",
+    "value": 0.1444,
+    "unit": "um2",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L10",
+      "quote": "Minimum Metaln area | 0.1444 um2"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "22_Metaln_58:L10",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "83fbf4f6f64fd25f",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L10-L10",
+    "section": "7.13 Metaln (where n = 1 to 5)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "2d9b415da26abf2b",
+   "stale": false,
+   "confidence": 0.97,
+   "notes": "",
+   "baseline_numbers": [
+    0.1444
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "M1.4",
+  "manual_rule_id": "Mn.4",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.13 Metaln (where n = 1 to 5)",
+  "title": "Metal1 minimum density over die",
+  "rule_type": "density",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "M1.4#1",
+    "clause": "main",
+    "description": "Metal1 coverage over the entire die",
+    "check": "min_density",
+    "operator": ">",
+    "value": 30,
+    "unit": "%",
+    "applies_when": {
+     "region": "entire die"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L11",
+      "quote": "Metaln coverage over the entire die shall be >30%"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [
+   {
+    "text": "Section 13.0 Dummy Metal fill guidelines",
+    "target": "13.0",
+    "evidence": [
+     {
+      "chunk_id": "22_Metaln_58:L11",
+      "quote": "Refer to section 13.0 for Dummy Metal fill guidelines"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "22_Metaln_58:L11",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "line_start": 11,
+    "line_end": 15,
+    "sha256": "50a8e6ba9b8586c5",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L11-L15",
+    "section": "7.13 Metaln (where n = 1 to 5)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "0ce9e02342423545",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "Strict inequality in the manual (> 30%).",
+   "baseline_numbers": [],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "V1.1",
+  "manual_rule_id": "Vn.1",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.14 Vian (where n = 1 to 5)",
+  "title": "Via1 min/max size",
+  "rule_type": "exact_size",
+  "layers": [
+   {
+    "name": "Via1",
+    "role": "primary",
+    "gds_layer": 35,
+    "gds_datatype": 0,
+    "deck_name": "via1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "V1.1#1",
+    "clause": "main",
+    "description": "Via1 edge length is exactly 0.26",
+    "check": "exact_size",
+    "operator": "==",
+    "value": 0.26,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "23_Vian_59:L3",
+      "quote": "Min/max Vian size (1 <= n <= 5) | 0.26"
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "23_Vian_59:L3",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv",
+    "line_start": 3,
+    "line_end": 3,
+    "sha256": "2ff7874d2a610f14",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv#L3-L3",
+    "section": "7.14 Vian (where n = 1 to 5)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "2f2cc6fbac9823b8",
+   "stale": false,
+   "confidence": 0.97,
+   "notes": "",
+   "baseline_numbers": [
+    0.26
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "V1.3",
+  "manual_rule_id": "Vn.3",
+  "template_binding": {
+   "n": 1
+  },
+  "pdk": "gf180mcu",
+  "section": "7.14 Vian (where n = 1 to 5)",
+  "title": "Metal1 overlap of Via1",
+  "rule_type": "enclosure",
+  "layers": [
+   {
+    "name": "Metal1",
+    "role": "primary",
+    "gds_layer": 34,
+    "gds_datatype": 0,
+    "deck_name": "metal1"
+   },
+   {
+    "name": "Via1",
+    "role": "secondary",
+    "gds_layer": 35,
+    "gds_datatype": 0,
+    "deck_name": "via1"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "V1.3#1",
+    "clause": "main",
+    "description": "Metal1 overlap of Via1",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.0,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "Metaln (where n=1 to 5) overlap of Vian"
+     },
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "0.00 (n = 1)"
+     }
+    ]
+   },
+   {
+    "id": "V1.3#2",
+    "clause": "i",
+    "description": "Metal1 (< 0.34um) end-of-line overlap of Via1",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.06,
+    "unit": "um",
+    "applies_when": {
+     "metal_width": "< 0.34um",
+     "edge": "end-of-line",
+     "excluding": "metal branches shorter than 0.28um"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "i. Metaln (< 0.34μm) end-of-line overlap (1)"
+     },
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "0.06"
+     },
+     {
+      "chunk_id": "drm_07_15:L13",
+      "quote": "excluding Metal branches shorter than 0.28μm"
+     }
+    ]
+   },
+   {
+    "id": "V1.3#3",
+    "clause": "ii",
+    "description": "If Metal1 overlaps Via1 by < 0.04um on one side, adjacent Metal1 edges overlap",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.06,
+    "unit": "um",
+    "applies_when": {
+     "condition": "one side overlap < 0.04um"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "ii. If Metaln overlap Vian by < 0.04μm on one side, adjacent Metaln edges overlap"
+     },
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "0.06 0.06"
+     }
+    ]
+   },
+   {
+    "id": "V1.3#4",
+    "clause": "iii",
+    "description": "Minimum Metal1 overlap of Via1 on all sides (guideline)",
+    "check": "min_enclosure",
+    "operator": ">=",
+    "value": 0.12,
+    "unit": "um",
+    "applies_when": {},
+    "guideline": true,
+    "coded_expected": false,
+    "evidence": [
+     {
+      "chunk_id": "23_Vian_59:L6",
+      "quote": "0.06 0.06 0.12"
+     },
+     {
+      "chunk_id": "70_not_coded_rules_187:L11",
+      "quote": "Vn.3iii"
+     }
+    ]
+   }
+  ],
+  "exceptions": [
+   {
+    "text": "Clause iii is a guideline, not coded (Appendix B)",
+    "kind": "not_coded",
+    "evidence": [
+     {
+      "chunk_id": "70_not_coded_rules_187:L11",
+      "quote": "Minimum metal-n overlap of via-n on all sides for min. via-n resistance variation (guideline)"
+     }
+    ]
+   }
+  ],
+  "references": [
+   {
+    "text": "Note 1: EOL clause applies to < 0.34um lines excluding branches shorter than 0.28um",
+    "target": "Vian note 1",
+    "evidence": [
+     {
+      "chunk_id": "drm_07_15:L13",
+      "quote": "1. Applies to all < 0.34μm wide Metal lines"
+     }
+    ]
+   }
+  ],
+  "provenance": [
+   {
+    "chunk_id": "23_Vian_59:L6",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv",
+    "line_start": 6,
+    "line_end": 23,
+    "sha256": "4d26f0348ecd40a4",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv#L6-L23",
+    "section": "7.14 Vian (where n = 1 to 5)"
+   },
+   {
+    "chunk_id": "drm_07_15:L13",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_15.rst",
+    "line_start": 13,
+    "line_end": 13,
+    "sha256": "96780420146e9f2b",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_15.rst#L13-L13",
+    "section": "7.14 Vian (where n = 1 to 5)"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L11",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "line_start": 11,
+    "line_end": 11,
+    "sha256": "aaa9af20222c2904",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L11-L11",
+    "section": "Appendix B: Rules not coded"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "48ebce2b6426cd8b",
+   "stale": false,
+   "confidence": 0.85,
+   "notes": "Main value 0.00 for n=1 means Via1 must be fully covered by Metal1. Value 0.01 is for 2<=n<=5 and is dropped.",
+   "baseline_numbers": [
+    0.0,
+    0.01,
+    0.06,
+    0.12
+   ],
+   "unused_numbers": [
+    0.01
+   ]
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "MT.1",
+  "manual_rule_id": "MT.1",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)",
+  "title": "MetalTop minimum width",
+  "rule_type": "width",
+  "layers": [
+   {
+    "name": "MetalTop",
+    "role": "primary",
+    "gds_layer": 53,
+    "gds_datatype": 0,
+    "deck_name": "metaltop"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "MT.1#1",
+    "clause": "main",
+    "description": "MetalTop width, 6K",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.36,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "6K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L3",
+      "quote": "MT.1 | Width | 0.36/0.44*"
+     }
+    ]
+   },
+   {
+    "id": "MT.1#2",
+    "clause": "main",
+    "description": "MetalTop width, 9K",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.44,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "9K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L3",
+      "quote": "0.36/0.44*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   },
+   {
+    "id": "MT.1#3",
+    "clause": "main",
+    "description": "MetalTop width, 11K",
+    "check": "min_width",
+    "operator": ">=",
+    "value": 0.44,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "11K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L3",
+      "quote": "0.36/0.44*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "24_MetalTop_61:L3",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "line_start": 3,
+    "line_end": 3,
+    "sha256": "389045a480ae32e3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L3-L3",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "d7c28363c6187679",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "aed0eef7f48abc96",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "In this section '*' means 9K/11K MetalTop, not 'rule not coded'.",
+   "baseline_numbers": [
+    0.36,
+    0.44
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "MT.2a",
+  "manual_rule_id": "MT.2a",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)",
+  "title": "MetalTop minimum space",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "MetalTop",
+    "role": "primary",
+    "gds_layer": 53,
+    "gds_datatype": 0,
+    "deck_name": "metaltop"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "MT.2a#1",
+    "clause": "main",
+    "description": "MetalTop space, 6K",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.38,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "6K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L4",
+      "quote": "MT.2a | Space | 0.38/0.46*"
+     }
+    ]
+   },
+   {
+    "id": "MT.2a#2",
+    "clause": "main",
+    "description": "MetalTop space, 9K",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.46,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "9K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L4",
+      "quote": "0.38/0.46*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   },
+   {
+    "id": "MT.2a#3",
+    "clause": "main",
+    "description": "MetalTop space, 11K",
+    "check": "min_space",
+    "operator": ">=",
+    "value": 0.46,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "11K"
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L4",
+      "quote": "0.38/0.46*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "24_MetalTop_61:L4",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "line_start": 4,
+    "line_end": 4,
+    "sha256": "c1b3fb35745125b4",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L4-L4",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "d7c28363c6187679",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "948360d7d71d621a",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "'*' = 9K/11K MetalTop.",
+   "baseline_numbers": [
+    0.38,
+    0.46
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ },
+ {
+  "rule_id": "MT.2b",
+  "manual_rule_id": "MT.2b",
+  "template_binding": null,
+  "pdk": "gf180mcu",
+  "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)",
+  "title": "MetalTop space between wide MetalTop",
+  "rule_type": "space",
+  "layers": [
+   {
+    "name": "MetalTop",
+    "role": "primary",
+    "gds_layer": 53,
+    "gds_datatype": 0,
+    "deck_name": "metaltop"
+   }
+  ],
+  "constraints": [
+   {
+    "id": "MT.2b#1",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 6K",
+    "check": "min_space_wide",
+    "operator": ">=",
+    "value": 0.5,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "6K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L5",
+      "quote": "Space between wide (length & width > 10um) MetalTop | 0.50/0.60*"
+     }
+    ]
+   },
+   {
+    "id": "MT.2b#2",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 9K",
+    "check": "min_space_wide",
+    "operator": ">=",
+    "value": 0.6,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "9K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L5",
+      "quote": "0.50/0.60*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   },
+   {
+    "id": "MT.2b#3",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 11K",
+    "check": "min_space_wide",
+    "operator": ">=",
+    "value": 0.6,
+    "unit": "um",
+    "applies_when": {
+     "metal_top_thickness": "11K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "guideline": false,
+    "coded_expected": true,
+    "evidence": [
+     {
+      "chunk_id": "24_MetalTop_61:L5",
+      "quote": "0.50/0.60*"
+     },
+     {
+      "chunk_id": "drm_07_16:L10",
+      "quote": "* For 9K/11K Å MetalTop."
+     }
+    ]
+   }
+  ],
+  "exceptions": [],
+  "references": [],
+  "provenance": [
+   {
+    "chunk_id": "24_MetalTop_61:L5",
+    "kind": "table_row",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "line_start": 5,
+    "line_end": 5,
+    "sha256": "47309352284177ce",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L5-L5",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "kind": "note",
+    "repo": "https://github.com/google/gf180mcu-pdk",
+    "commit": "de3240d7529a6970437ac3344820aaae7839f215",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "line_start": 10,
+    "line_end": 10,
+    "sha256": "d7c28363c6187679",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10",
+    "section": "7.15 MetalTop (Thickness 6K/9K*/11K* Å)"
+   }
+  ],
+  "extraction": {
+   "method": "llm",
+   "backend": "replay",
+   "model": "claude-opus-5-5",
+   "prompt_sha": "f817eb5fe3a34f54",
+   "context_sha": "58bf03597b22ae10",
+   "stale": false,
+   "confidence": 0.9,
+   "notes": "",
+   "baseline_numbers": [
+    0.5,
+    0.6
+   ],
+   "unused_numbers": []
+  },
+  "review": {
+   "status": "pending",
+   "reviewer": null,
+   "date": null,
+   "comment": null
+  }
+ }
+]

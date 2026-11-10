@@ -1,0 +1,12 @@
+# upstream sources (fetched by scripts/setup_sources.sh)
+third_party_gf180mcu-pdk/
+third_party_gf180mcu_fd_pr/
+# regenerated outputs (keep out/report.html, summary.md, rules.json if you want them visible on GitHub)
+out/layout_tests/
+out/prompts/
+out/doc_chunks.jsonl
+out/deck_index.json
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc

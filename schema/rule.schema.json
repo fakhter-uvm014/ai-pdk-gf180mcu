@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/ai-pdk/rule.schema.json",
+  "title": "AI-PDK structured design rule",
+  "description": "One design rule extracted from the GF180MCU Design Manual, normalised, with source provenance for every value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rule_id", "manual_rule_id", "pdk", "section", "title", "rule_type", "layers", "constraints", "exceptions", "references", "provenance", "extraction", "review"],
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_id", "quote"],
+      "properties": {
+        "chunk_id": {"type": "string", "pattern": "^[A-Za-z0-9_.\\-]+:L[0-9]+$"},
+        "quote": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence_list": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_id", "kind", "repo", "commit", "file", "line_start", "line_end", "sha256", "url"],
+      "properties": {
+        "chunk_id": {"type": "string"},
+        "kind": {"enum": ["table_row", "note", "section_text"]},
+        "repo": {"type": "string", "format": "uri"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "file": {"type": "string"},
+        "line_start": {"type": "integer", "minimum": 1},
+        "line_end": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{16}$"},
+        "url": {"type": "string", "format": "uri"},
+        "section": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "properties": {
+    "rule_id": {"type": "string", "pattern": "^[A-Z][A-Za-z0-9]*\\.[0-9]+[a-z]?$"},
+    "manual_rule_id": {"type": "string"},
+    "template_binding": {"type": ["object", "null"], "additionalProperties": {"type": "integer"}},
+    "pdk": {"const": "gf180mcu"},
+    "section": {"type": "string"},
+    "title": {"type": "string", "minLength": 3},
+    "rule_type": {"enum": ["width", "space", "enclosure", "exact_size", "area", "density", "forbidden", "extension", "gate_length"]},
+    "layers": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["name", "role"],
+        "properties": {
+          "name": {"type": "string"},
+          "role": {"enum": ["primary", "secondary", "marker"]},
+          "gds_layer": {"type": ["integer", "null"]},
+          "gds_datatype": {"type": ["integer", "null"]},
+          "deck_name": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "constraints": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "clause", "description", "check", "operator", "value", "unit", "applies_when", "guideline", "coded_expected", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "clause": {"type": "string"},
+          "description": {"type": "string"},
+          "check": {"enum": ["min_width", "min_space", "min_space_wide", "min_enclosure", "exact_size", "min_area", "min_density", "forbidden", "min_extension", "min_gate_length"]},
+          "operator": {"enum": [">=", ">", "==", "<=", "<", "forbidden"]},
+          "value": {"type": ["number", "null"], "minimum": 0},
+          "unit": {"enum": ["um", "um2", "%", null]},
+          "applies_when": {"type": "object"},
+          "guideline": {"type": "boolean"},
+          "coded_expected": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence_list"}
+        },
+        "allOf": [
+          {"if": {"properties": {"operator": {"const": "forbidden"}}}, "then": {"properties": {"value": {"type": "null"}}}},
+          {"if": {"properties": {"check": {"const": "min_area"}}}, "then": {"properties": {"unit": {"const": "um2"}}}},
+          {"if": {"properties": {"check": {"const": "min_density"}}}, "then": {"properties": {"unit": {"const": "%"}}}}
+        ]
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["text", "kind", "evidence"],
+        "properties": {
+          "text": {"type": "string"},
+          "kind": {"enum": ["region_override", "not_coded", "scope_limit"]},
+          "marker_layer": {"type": "string"},
+          "override_value": {"type": ["number", "null"]},
+          "evidence": {"$ref": "#/$defs/evidence_list"}
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["text", "target", "evidence"],
+        "properties": {"text": {"type": "string"}, "target": {"type": "string"}, "evidence": {"$ref": "#/$defs/evidence_list"}}
+      }
+    },
+    "provenance": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/provenance"}},
+    "extraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "backend", "model", "prompt_sha", "context_sha", "stale", "confidence"],
+      "properties": {
+        "method": {"const": "llm"},
+        "backend": {"enum": ["replay", "anthropic"]},
+        "model": {"type": ["string", "null"]},
+        "prompt_sha": {"type": "string"},
+        "context_sha": {"type": "string"},
+        "stale": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "notes": {"type": "string"},
+        "baseline_numbers": {"type": "array", "items": {"type": "number"}},
+        "unused_numbers": {"type": "array", "items": {"type": "number"}}
+      }
+    },
+    "review": {
+      "type": "object", "additionalProperties": false, "required": ["status"],
+      "properties": {
+        "status": {"enum": ["pending", "approved", "rejected", "waived"]},
+        "reviewer": {"type": ["string", "null"]},
+        "date": {"type": ["string", "null"]},
+        "comment": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

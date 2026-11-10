@@ -1,0 +1,2541 @@
+[
+ {
+  "rule_id": "PL.1",
+  "title": "Poly2 interconnect minimum width (outside PLFUSE)",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "PL.1#1",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 3.3V",
+    "applies_when": {
+     "voltage_domain": "3.3V",
+     "region": "outside PLFUSE"
+    },
+    "expected": ">= 0.18 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.1_3.3V",
+    "deck_values": [
+     0.18
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 1444,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1441,
+     "output_line": 1444,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1441-L1444",
+     "statements": [
+      {
+       "line": 1443,
+       "code": "pl1_l1 = poly2.outside(plfuse).not(ymtp_mk).width(0.18.um, euclidian).polygons(0.001).not_interacting(v5_xtor).not_interacting(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "plfuse",
+     "ymtp_mk"
+    ]
+   },
+   {
+    "constraint_id": "PL.1#2",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 5V",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "region": "outside PLFUSE"
+    },
+    "expected": ">= 0.2 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.1_5V",
+    "deck_values": [
+     0.2
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 1450,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1447,
+     "output_line": 1450,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1447-L1450",
+     "statements": [
+      {
+       "line": 1449,
+       "code": "pl1_l1 = poly2.outside(plfuse).not(ymtp_mk).width(0.2.um, euclidian).polygons(0.001).overlapping(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "plfuse",
+     "ymtp_mk"
+    ]
+   },
+   {
+    "constraint_id": "PL.1#3",
+    "clause": "main",
+    "description": "Interconnect width outside PLFUSE, 6V",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "region": "outside PLFUSE"
+    },
+    "expected": ">= 0.2 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.1_5V",
+    "deck_values": [
+     0.2
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 1450,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1447,
+     "output_line": 1450,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1447-L1450",
+     "statements": [
+      {
+       "line": 1449,
+       "code": "pl1_l1 = poly2.outside(plfuse).not(ymtp_mk).width(0.2.um, euclidian).polygons(0.001).overlapping(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "plfuse",
+     "ymtp_mk"
+    ]
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "PL.1_3.3V",
+   "PL.1_5V"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "PL.1_3.3V",
+    "similarity": 1.0,
+    "header": "Interconnect Width (outside PLFUSE). is 0.18µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1444"
+   },
+   {
+    "deck_rule_id": "PL.1_5V",
+    "similarity": 1.0,
+    "header": "Interconnect Width (outside PLFUSE). is 0.2µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1450"
+   },
+   {
+    "deck_rule_id": "PL.1a_3.3V",
+    "similarity": 0.87,
+    "header": "Interconnect Width (inside PLFUSE). is 0.18µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1456"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "16_Poly2_42:L3",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "3-3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L3-L3"
+   },
+   {
+    "chunk_id": "16_Poly2_42:L2",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "2-2",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L2-L2"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L9",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "lines": "9-9",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L9-L9"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "PL.2",
+  "title": "Poly2 gate width (channel length)",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "PL.2#1",
+    "clause": "main",
+    "description": "3.3V NMOS and PMOS channel length",
+    "applies_when": {
+     "voltage_domain": "3.3V"
+    },
+    "expected": ">= 0.28 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.2_3.3V",
+    "deck_values": [
+     0.28
+    ],
+    "text_similarity": 0.41,
+    "deck_output_line": 1468,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1465,
+     "output_line": 1468,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1465-L1468",
+     "statements": [
+      {
+       "line": 427,
+       "code": "tgate = poly2     & comp"
+      },
+      {
+       "line": 1467,
+       "code": "pl2_l1 = poly2.edges.and(tgate.edges).not(otp_mk).not(ymtp_mk).width(0.28.um, euclidian).polygons(0.001).not_interacting(v5_xtor).not_interacting(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "otp_mk",
+     "ymtp_mk"
+    ]
+   },
+   {
+    "constraint_id": "PL.2#2",
+    "clause": "main",
+    "description": "5V NMOS channel length",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "device_polarity": "N"
+    },
+    "expected": ">= 0.6 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.2_5V",
+    "deck_values": [
+     0.55,
+     0.5,
+     0.7,
+     0.6
+    ],
+    "text_similarity": 0.55,
+    "deck_output_line": 1478,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1475,
+     "output_line": 1478,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1475-L1478",
+     "statements": [
+      {
+       "line": 429,
+       "code": "pgate = pplus     & tgate"
+      },
+      {
+       "line": 1471,
+       "code": "pl_2_5v_n = comp.not(poly2).edges.and(ngate.edges).and(v5_xtor).and(dualgate).space(0.6.um, euclidian).polygons"
+      },
+      {
+       "line": 1472,
+       "code": "pl_2_5v_p = comp.not(poly2).edges.and(pgate.edges).and(v5_xtor).and(dualgate).space(0.5.um, euclidian).polygons"
+      },
+      {
+       "line": 1473,
+       "code": "pl_2_6v_n = comp.not(poly2).edges.and(ngate.edges).not(v5_xtor).and(dualgate).space(0.7.um, euclidian).polygons"
+      },
+      {
+       "line": 1474,
+       "code": "pl_2_6v_p = comp.not(poly2).edges.and(pgate.edges).not(v5_xtor).and(dualgate).space(0.55.um, euclidian).polygons"
+      },
+      {
+       "line": 1477,
+       "code": "pl2_l1 = pl_2_5v_n.or(pl_2_5v_p).or(pl_2_6v_n.or(pl_2_6v_p))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "PL.2#3",
+    "clause": "main",
+    "description": "5V PMOS channel length",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "device_polarity": "P"
+    },
+    "expected": ">= 0.5 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.2_5V",
+    "deck_values": [
+     0.55,
+     0.5,
+     0.7,
+     0.6
+    ],
+    "text_similarity": 0.49,
+    "deck_output_line": 1478,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1475,
+     "output_line": 1478,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1475-L1478",
+     "statements": [
+      {
+       "line": 429,
+       "code": "pgate = pplus     & tgate"
+      },
+      {
+       "line": 1471,
+       "code": "pl_2_5v_n = comp.not(poly2).edges.and(ngate.edges).and(v5_xtor).and(dualgate).space(0.6.um, euclidian).polygons"
+      },
+      {
+       "line": 1472,
+       "code": "pl_2_5v_p = comp.not(poly2).edges.and(pgate.edges).and(v5_xtor).and(dualgate).space(0.5.um, euclidian).polygons"
+      },
+      {
+       "line": 1473,
+       "code": "pl_2_6v_n = comp.not(poly2).edges.and(ngate.edges).not(v5_xtor).and(dualgate).space(0.7.um, euclidian).polygons"
+      },
+      {
+       "line": 1474,
+       "code": "pl_2_6v_p = comp.not(poly2).edges.and(pgate.edges).not(v5_xtor).and(dualgate).space(0.55.um, euclidian).polygons"
+      },
+      {
+       "line": 1477,
+       "code": "pl2_l1 = pl_2_5v_n.or(pl_2_5v_p).or(pl_2_6v_n.or(pl_2_6v_p))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "PL.2#4",
+    "clause": "main",
+    "description": "6V NMOS channel length",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "device_polarity": "N"
+    },
+    "expected": ">= 0.7 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.2_5V",
+    "deck_values": [
+     0.55,
+     0.5,
+     0.7,
+     0.6
+    ],
+    "text_similarity": 0.55,
+    "deck_output_line": 1478,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1475,
+     "output_line": 1478,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1475-L1478",
+     "statements": [
+      {
+       "line": 429,
+       "code": "pgate = pplus     & tgate"
+      },
+      {
+       "line": 1471,
+       "code": "pl_2_5v_n = comp.not(poly2).edges.and(ngate.edges).and(v5_xtor).and(dualgate).space(0.6.um, euclidian).polygons"
+      },
+      {
+       "line": 1472,
+       "code": "pl_2_5v_p = comp.not(poly2).edges.and(pgate.edges).and(v5_xtor).and(dualgate).space(0.5.um, euclidian).polygons"
+      },
+      {
+       "line": 1473,
+       "code": "pl_2_6v_n = comp.not(poly2).edges.and(ngate.edges).not(v5_xtor).and(dualgate).space(0.7.um, euclidian).polygons"
+      },
+      {
+       "line": 1474,
+       "code": "pl_2_6v_p = comp.not(poly2).edges.and(pgate.edges).not(v5_xtor).and(dualgate).space(0.55.um, euclidian).polygons"
+      },
+      {
+       "line": 1477,
+       "code": "pl2_l1 = pl_2_5v_n.or(pl_2_5v_p).or(pl_2_6v_n.or(pl_2_6v_p))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "PL.2#5",
+    "clause": "main",
+    "description": "6V PMOS channel length",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "device_polarity": "P"
+    },
+    "expected": ">= 0.55 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.2_5V",
+    "deck_values": [
+     0.55,
+     0.5,
+     0.7,
+     0.6
+    ],
+    "text_similarity": 0.49,
+    "deck_output_line": 1478,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1475,
+     "output_line": 1478,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1475-L1478",
+     "statements": [
+      {
+       "line": 429,
+       "code": "pgate = pplus     & tgate"
+      },
+      {
+       "line": 1471,
+       "code": "pl_2_5v_n = comp.not(poly2).edges.and(ngate.edges).and(v5_xtor).and(dualgate).space(0.6.um, euclidian).polygons"
+      },
+      {
+       "line": 1472,
+       "code": "pl_2_5v_p = comp.not(poly2).edges.and(pgate.edges).and(v5_xtor).and(dualgate).space(0.5.um, euclidian).polygons"
+      },
+      {
+       "line": 1473,
+       "code": "pl_2_6v_n = comp.not(poly2).edges.and(ngate.edges).not(v5_xtor).and(dualgate).space(0.7.um, euclidian).polygons"
+      },
+      {
+       "line": 1474,
+       "code": "pl_2_6v_p = comp.not(poly2).edges.and(pgate.edges).not(v5_xtor).and(dualgate).space(0.55.um, euclidian).polygons"
+      },
+      {
+       "line": 1477,
+       "code": "pl2_l1 = pl_2_5v_n.or(pl_2_5v_p).or(pl_2_6v_n.or(pl_2_6v_p))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "PL.2_3.3V",
+   "PL.2_5V"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "PL.2_3.3V",
+    "similarity": 0.67,
+    "header": "Gate Width (Channel Length). is 0.28µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1468"
+   },
+   {
+    "deck_rule_id": "PL.2_5V",
+    "similarity": 0.67,
+    "header": "Gate Width (Channel Length).",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1478"
+   },
+   {
+    "deck_rule_id": "MDN.3a",
+    "similarity": 0.61,
+    "header": "Min transistor channel length. is 0.6µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L4181"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "16_Poly2_42:L5",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "5-5",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L5-L5"
+   },
+   {
+    "chunk_id": "drm_07_08:L4",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "lines": "4-4",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L4-L4"
+   },
+   {
+    "chunk_id": "drm_07_08:L16",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "lines": "16-16",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L16-L16"
+   },
+   {
+    "chunk_id": "41_OTP_MK_Mark_106:L6",
+    "file": "docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv",
+    "lines": "6-6",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv#L6-L6"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L10",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L10-L10"
+   },
+   {
+    "chunk_id": "47_NEO_EE_MK_124:L25",
+    "file": "docs/physical_verification/design_manual/tables_clear/47_NEO_EE_MK_124.csv",
+    "lines": "25-25",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/47_NEO_EE_MK_124.csv#L25-L25"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "PL.3b",
+  "title": "Poly2 space on COMP for low active sheet resistivity (guideline)",
+  "status": "REVIEW",
+  "reason": "guideline not coded by design (manual Appendix B and deck agree) — confirm waiver",
+  "constraints": [
+   {
+    "constraint_id": "PL.3b#1",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 3.3V",
+    "applies_when": {
+     "voltage_domain": "3.3V"
+    },
+    "expected": ">= 0.26 um",
+    "coded_expected": false,
+    "flags": [],
+    "status": "NOT_CODED_OK",
+    "deck_markers": [
+     "PL.3b_3.3V",
+     "PL.3b_5V"
+    ],
+    "deck_marker": "PL.3b"
+   },
+   {
+    "constraint_id": "PL.3b#2",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 5V",
+    "applies_when": {
+     "voltage_domain": "5V"
+    },
+    "expected": ">= 0.4 um",
+    "coded_expected": false,
+    "flags": [],
+    "status": "NOT_CODED_OK",
+    "deck_markers": [
+     "PL.3b_3.3V",
+     "PL.3b_5V"
+    ]
+   },
+   {
+    "constraint_id": "PL.3b#3",
+    "clause": "main",
+    "description": "Poly2 space on COMP (guideline), 6V",
+    "applies_when": {
+     "voltage_domain": "6V"
+    },
+    "expected": ">= 0.4 um",
+    "coded_expected": false,
+    "flags": [],
+    "status": "NOT_CODED_OK",
+    "deck_markers": [
+     "PL.3b_3.3V",
+     "PL.3b_5V"
+    ]
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [],
+  "deck_not_coded_markers": [
+   {
+    "rule_id": "PL.3b_3.3V",
+    "line": 1501,
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1501"
+   },
+   {
+    "rule_id": "PL.3b_5V",
+    "line": 1503,
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1503"
+   }
+  ],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "O.PL.3a",
+    "similarity": 0.44,
+    "header": "Min. poly2 Space on COMP. is 0.18µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3876"
+   },
+   {
+    "deck_rule_id": "CO.7",
+    "similarity": 0.3,
+    "header": "Space from COMP contact to Poly2 on COMP. is 0.15µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2358"
+   },
+   {
+    "deck_rule_id": "O.CO.7",
+    "similarity": 0.3,
+    "header": "Min. space from COMP contact to Poly2 on COMP. is 0.13µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3948"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "16_Poly2_42:L15",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "15-15",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L15-L15"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L8",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "lines": "8-8",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L8-L8"
+   },
+   {
+    "chunk_id": "drm_07_08:L12",
+    "file": "docs/physical_verification/design_manual/drm_07_08.rst",
+    "lines": "12-12",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_08.rst#L12-L12"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "PL.5b",
+  "title": "Space from field Poly2 to related COMP",
+  "status": "REVIEW",
+  "reason": "implemented, but needs engineering judgement: IDENTICAL_TO_OTHER_RULE, UNEXPLAINED_EXCLUSION",
+  "constraints": [
+   {
+    "constraint_id": "PL.5b#1",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 3.3V",
+    "applies_when": {
+     "voltage_domain": "3.3V",
+     "relation": "related COMP"
+    },
+    "expected": ">= 0.1 um",
+    "coded_expected": true,
+    "flags": [
+     "UNEXPLAINED_EXCLUSION",
+     "IDENTICAL_TO_OTHER_RULE"
+    ],
+    "deck_rule_id": "PL.5b_3.3V",
+    "deck_values": [
+     0.1
+    ],
+    "text_similarity": 0.92,
+    "deck_output_line": 1534,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1531,
+     "output_line": 1534,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1531-L1534",
+     "statements": [
+      {
+       "line": 1505,
+       "code": "poly_pl = poly2.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1506,
+       "code": "comp_pl = comp.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1533,
+       "code": "pl5b_l1 = poly_pl.separation(comp_pl, 0.1.um, euclidian).polygons(0.001).not_interacting(v5_xtor).not_interacting(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "otp_mk",
+     "ymtp_mk"
+    ]
+   },
+   {
+    "constraint_id": "PL.5b#2",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 5V",
+    "applies_when": {
+     "voltage_domain": "5V",
+     "relation": "related COMP"
+    },
+    "expected": ">= 0.3 um",
+    "coded_expected": true,
+    "flags": [
+     "UNEXPLAINED_EXCLUSION",
+     "IDENTICAL_TO_OTHER_RULE"
+    ],
+    "deck_rule_id": "PL.5b_5V",
+    "deck_values": [
+     0.3
+    ],
+    "text_similarity": 0.92,
+    "deck_output_line": 1540,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1537,
+     "output_line": 1540,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1537-L1540",
+     "statements": [
+      {
+       "line": 1505,
+       "code": "poly_pl = poly2.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1506,
+       "code": "comp_pl = comp.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1539,
+       "code": "pl5b_l1 = poly_pl.outside(sramcore).separation(comp_pl, 0.3.um, euclidian).polygons(0.001).overlapping(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "otp_mk",
+     "sramcore",
+     "ymtp_mk"
+    ]
+   },
+   {
+    "constraint_id": "PL.5b#3",
+    "clause": "main",
+    "description": "Field Poly2 to related COMP space, 6V",
+    "applies_when": {
+     "voltage_domain": "6V",
+     "relation": "related COMP"
+    },
+    "expected": ">= 0.3 um",
+    "coded_expected": true,
+    "flags": [
+     "UNEXPLAINED_EXCLUSION",
+     "IDENTICAL_TO_OTHER_RULE"
+    ],
+    "deck_rule_id": "PL.5b_5V",
+    "deck_values": [
+     0.3
+    ],
+    "text_similarity": 0.92,
+    "deck_output_line": 1540,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 1537,
+     "output_line": 1540,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1537-L1540",
+     "statements": [
+      {
+       "line": 1505,
+       "code": "poly_pl = poly2.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1506,
+       "code": "comp_pl = comp.not(otp_mk).not(ymtp_mk).not(mvsd).not(mvpsd)"
+      },
+      {
+       "line": 1539,
+       "code": "pl5b_l1 = poly_pl.outside(sramcore).separation(comp_pl, 0.3.um, euclidian).polygons(0.001).overlapping(dualgate)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "otp_mk",
+     "sramcore",
+     "ymtp_mk"
+    ]
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "UNEXPLAINED_EXCLUSION",
+    "constraint": "PL.5b#1",
+    "detail": "PL.5b_3.3V excludes mvpsd, mvsd; no manual exception for this rule mentions it"
+   },
+   {
+    "type": "IDENTICAL_TO_OTHER_RULE",
+    "constraint": "PL.5b#1",
+    "detail": "PL.5b_3.3V has the same implementation as PL.5a_3.3V: `poly_pl.separation(comp_pl, 0.1.um, euclidian).polygons(0.001).not_interacting(v5_xtor).not_interacting(dualga`"
+   },
+   {
+    "type": "UNEXPLAINED_EXCLUSION",
+    "constraint": "PL.5b#2",
+    "detail": "PL.5b_5V excludes mvpsd, mvsd; no manual exception for this rule mentions it"
+   },
+   {
+    "type": "IDENTICAL_TO_OTHER_RULE",
+    "constraint": "PL.5b#2",
+    "detail": "PL.5b_5V has the same implementation as PL.5a_5V: `poly_pl.outside(sramcore).separation(comp_pl, 0.3.um, euclidian).polygons(0.001).overlapping(dualgate)`"
+   }
+  ],
+  "deck_candidates": [
+   "PL.5b_3.3V",
+   "PL.5b_5V"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "PL.5b_3.3V",
+    "similarity": 0.96,
+    "header": "Space from field Poly2 to related COMP. is 0.1µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1534"
+   },
+   {
+    "deck_rule_id": "PL.5b_5V",
+    "similarity": 0.96,
+    "header": "Space from field Poly2 to related COMP. is 0.3µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L1540"
+   },
+   {
+    "deck_rule_id": "S.PL.5b_MV",
+    "similarity": 0.96,
+    "header": "Space from field Poly2 to related COMP. is 0.12µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L4954"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "16_Poly2_42:L20",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "20-20",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L20-L20"
+   },
+   {
+    "chunk_id": "41_OTP_MK_Mark_106:L10",
+    "file": "docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/41_OTP_MK_Mark_106.csv#L10-L10"
+   },
+   {
+    "chunk_id": "45_YMTP_MK_Mark_121:L15",
+    "file": "docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv",
+    "lines": "15-15",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/45_YMTP_MK_Mark_121.csv#L15-L15"
+   },
+   {
+    "chunk_id": "48_SRAM1_126:L12",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM1_126.csv",
+    "lines": "12-12",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM1_126.csv#L12-L12"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "PL.8",
+  "title": "Poly2 minimum density over die",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "PL.8#1",
+    "clause": "main",
+    "description": "Poly2 coverage over the entire die",
+    "applies_when": {
+     "region": "entire die"
+    },
+    "expected": ">= 14 %",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "PL.8",
+    "deck_values": [
+     14.0
+    ],
+    "text_similarity": 0.51,
+    "deck_output_line": 131,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu_density.drc",
+     "header_line": 129,
+     "output_line": 131,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu_density.drc#L129-L131",
+     "statements": [],
+     "context": [
+      "if ((poly2.area / CHIP.area)*100 < 14)"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "PL.8"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "PL.8",
+    "similarity": 0.59,
+    "header": "Poly2 coverage over the entire die shall be 14%. Dummy poly2 lines must be added to meet the minimum poly2 density requirement.",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu_density.drc#L131"
+   },
+   {
+    "deck_rule_id": "CO.10",
+    "similarity": 0.35,
+    "header": "Contact on Poly2 gate over COMP is forbidden.",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2376"
+   },
+   {
+    "deck_rule_id": "O.PL.3a",
+    "similarity": 0.15,
+    "header": "Min. poly2 Space on COMP. is 0.18µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3876"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "16_Poly2_42:L23",
+    "file": "docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv",
+    "lines": "23-25",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/16_Poly2_42.csv#L23-L25"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "CO.1",
+  "title": "Contact min/max size",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "CO.1#1",
+    "clause": "main",
+    "description": "Contact edge length is exactly 0.22",
+    "applies_when": {},
+    "expected": "== 0.22 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.1",
+    "deck_values": [
+     0.22
+    ],
+    "text_similarity": 0.17,
+    "deck_output_line": 2250,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2247,
+     "output_line": 2250,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2247-L2250",
+     "statements": [
+      {
+       "line": 2249,
+       "code": "co1_l1 = contact.edges.without_length(0.22.um).extended(0, 0, 0.001, 0.001)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "CO.1"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "CO.1",
+    "similarity": 0.64,
+    "header": "Min/max contact size. is 0.22µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2250"
+   },
+   {
+    "deck_rule_id": "CO.2a",
+    "similarity": 0.48,
+    "header": "min. contact spacing is 0.25µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2256"
+   },
+   {
+    "deck_rule_id": "CO.4",
+    "similarity": 0.4,
+    "header": "COMP overlap of contact. is 0.07µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2289"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "21_Contact_56:L3",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "lines": "3-3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L3-L3"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "CO.2a",
+  "title": "Contact minimum space",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "CO.2a#1",
+    "clause": "main",
+    "description": "Contact to contact space",
+    "applies_when": {},
+    "expected": ">= 0.25 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.2a",
+    "deck_values": [
+     0.25
+    ],
+    "text_similarity": 0.99,
+    "deck_output_line": 2256,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2253,
+     "output_line": 2256,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2253-L2256",
+     "statements": [
+      {
+       "line": 2255,
+       "code": "co2a_l1 = contact.space(0.25.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "CO.2a"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "CO.2a",
+    "similarity": 0.99,
+    "header": "min. contact spacing is 0.25µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2256"
+   },
+   {
+    "deck_rule_id": "CO.4",
+    "similarity": 0.75,
+    "header": "COMP overlap of contact. is 0.07µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2289"
+   },
+   {
+    "deck_rule_id": "S.CO.4_MV",
+    "similarity": 0.75,
+    "header": "COMP overlap of contact. is 0.04µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L4962"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "21_Contact_56:L4",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "lines": "4-4",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L4-L4"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "CO.3",
+  "title": "Poly2 overlap of contact",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "CO.3#1",
+    "clause": "main",
+    "description": "Poly2 enclosure of contact",
+    "applies_when": {},
+    "expected": ">= 0.07 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.3",
+    "deck_values": [
+     0.07
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2279,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2274,
+     "output_line": 2279,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2274-L2279",
+     "statements": [
+      {
+       "line": 2276,
+       "code": "co3_l1 = poly2.enclosing(contact.outside(sramcore), 0.07.um, euclidian).polygons(0.001)"
+      },
+      {
+       "line": 2277,
+       "code": "co3_l2 = contact.outside(sramcore).not_outside(poly2).not(poly2)"
+      },
+      {
+       "line": 2278,
+       "code": "co3_l = co3_l1.or(co3_l2)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "sramcore"
+    ]
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "CO.3"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "CO.3",
+    "similarity": 1.0,
+    "header": "Poly2 overlap of contact. is 0.07µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2279"
+   },
+   {
+    "deck_rule_id": "S.CO.3_LV",
+    "similarity": 1.0,
+    "header": "Poly2 overlap of contact. is 0.04µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L4992"
+   },
+   {
+    "deck_rule_id": "HRES.7",
+    "similarity": 0.67,
+    "header": "Minimum Pplus overlap of contact on Poly2 resistor. is 0.2µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3403"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "21_Contact_56:L6",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "lines": "6-6",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L6-L6"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L6",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "lines": "6-6",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L6-L6"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "CO.6",
+  "title": "Metal1 overlap of contact",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "CO.6#1",
+    "clause": "main",
+    "description": "Metal1 overlap of contact",
+    "applies_when": {},
+    "expected": ">= 0.005 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.6",
+    "deck_values": [
+     0.005,
+     0.0
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2323,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2320,
+     "output_line": 2323,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2320-L2323",
+     "statements": [
+      {
+       "line": 2322,
+       "code": "co6_l1 = metal1.enclosing(contact, 0.005.um, euclidian).polygons(0.001).or(contact.not_inside(metal1).not(metal1))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "CO.6#2",
+    "clause": "i",
+    "description": "Metal1 (< 0.34um) end-of-line overlap of contact",
+    "applies_when": {
+     "metal_width": "< 0.34um",
+     "edge": "end-of-line",
+     "excluding": "metal branches shorter than 0.24um"
+    },
+    "expected": ">= 0.06 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.6a",
+    "deck_values": [
+     0.06
+    ],
+    "text_similarity": 0.9,
+    "deck_output_line": 2331,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2328,
+     "output_line": 2331,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2328-L2331",
+     "statements": [
+      {
+       "line": 2326,
+       "code": "cop6a_cond = metal1.drc( width <= 0.34.um).with_length(0.24.um,nil,both)"
+      },
+      {
+       "line": 2327,
+       "code": "cop6a_eol = metal1.edges.with_length(nil, 0.34.um).interacting(cop6a_cond.first_edges).interacting(cop6a_cond.second_edges).not(cop6a_cond.first_edges).not(cop6a_cond.second_edges)"
+      },
+      {
+       "line": 2330,
+       "code": "co6a_l1 = cop6a_eol.enclosing(contact.edges,0.06.um, projection).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "CO.6#3",
+    "clause": "ii",
+    "description": "If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap",
+    "applies_when": {
+     "condition": "one side overlap < 0.04um"
+    },
+    "expected": ">= 0.06 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.6b",
+    "deck_values": [
+     0.06
+    ],
+    "text_similarity": 0.95,
+    "deck_output_line": 2344,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2341,
+     "output_line": 2344,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2341-L2344",
+     "statements": [
+      {
+       "line": 2338,
+       "code": "co_6b_1 = contact.edges.interacting(contact.drc(enclosed(metal1, projection) < 0.04.um).edges.centers(0, 0.5))"
+      },
+      {
+       "line": 2339,
+       "code": "co_6b_2 = contact.edges.interacting(contact.drc(0.04.um <= enclosed(metal1, projection) < 0.06.um).centers(0, 0.5))"
+      },
+      {
+       "line": 2340,
+       "code": "co_6b_3 = co_6b_1.extended(0, 0, 0, 0.001, joined).corners(90)"
+      },
+      {
+       "line": 2343,
+       "code": "co6b_l1 = co_6b_2.not_in(co_6b_1).interacting(co_6b_1).or(co_6b_1.interacting(co_6b_3)).not(sramcore).enclosed(metal1.outside(sramcore).edges, 0.06.um).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "sramcore"
+    ]
+   },
+   {
+    "constraint_id": "CO.6#4",
+    "clause": "iii",
+    "description": "Minimum Metal1 overlap of contact on all sides (guideline)",
+    "applies_when": {},
+    "expected": ">= 0.12 um",
+    "coded_expected": false,
+    "flags": [],
+    "status": "NOT_CODED_OK",
+    "deck_markers": [
+     "CO.6c"
+    ],
+    "deck_marker": "CO.6c"
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "DECK_VARIANT_DIVERGENCE",
+    "constraint": "CO.6#1",
+    "info": true,
+    "detail": "CO.6: gf180mcu.drc uses `….or(contact.not_inside(metal1).not(metal1))`, rule_decks/contact.drc uses `….or(contact.not(metal1))`"
+   }
+  ],
+  "deck_candidates": [
+   "CO.6",
+   "CO.6a",
+   "CO.6b"
+  ],
+  "deck_not_coded_markers": [
+   {
+    "rule_id": "CO.6c",
+    "line": 2353,
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2353"
+   }
+  ],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "CO.6",
+    "similarity": 0.9,
+    "header": "Metal1 overlap of contact.",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2323"
+   },
+   {
+    "deck_rule_id": "CO.6b",
+    "similarity": 0.81,
+    "header": "(ii) If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap is 0.06µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2344"
+   },
+   {
+    "deck_rule_id": "S.CO.6_ii_LV",
+    "similarity": 0.81,
+    "header": "(ii) If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L5010"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "21_Contact_56:L10",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "lines": "10-22",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L10-L22"
+   },
+   {
+    "chunk_id": "drm_07_13:L13",
+    "file": "docs/physical_verification/design_manual/drm_07_13.rst",
+    "lines": "13-13",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_13.rst#L13-L13"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L10",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L10-L10"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L8",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "lines": "8-8",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L8-L8"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "CO.11",
+  "title": "Contact on field oxide forbidden",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "CO.11#1",
+    "clause": "main",
+    "description": "Contact must land on COMP or Poly2 (not on field oxide)",
+    "applies_when": {},
+    "expected": "forbidden None",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "CO.11",
+    "deck_values": [
+     0.0
+    ],
+    "text_similarity": 0.55,
+    "deck_output_line": 2382,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2379,
+     "output_line": 2382,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2379-L2382",
+     "statements": [
+      {
+       "line": 2381,
+       "code": "co11_l1 = contact.not_inside(comp.or(poly2))"
+      }
+     ],
+     "context": [
+      "if FEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "DECK_VARIANT_DIVERGENCE",
+    "constraint": "CO.11#1",
+    "info": true,
+    "detail": "CO.11: gf180mcu.drc uses `contact.not_inside(comp.or(poly2))`, rule_decks/contact.drc uses `contact.not(comp.or(poly2))`"
+   }
+  ],
+  "deck_candidates": [
+   "CO.11"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "CO.11",
+    "similarity": 0.84,
+    "header": "Contact on field oxide is forbidden.",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2382"
+   },
+   {
+    "deck_rule_id": "CO.2a",
+    "similarity": 0.31,
+    "header": "min. contact spacing is 0.25µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2256"
+   },
+   {
+    "deck_rule_id": "CO.3",
+    "similarity": 0.3,
+    "header": "Poly2 overlap of contact. is 0.07µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2279"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "21_Contact_56:L27",
+    "file": "docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv",
+    "lines": "27-27",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/21_Contact_56.csv#L27-L27"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "M1.1",
+  "title": "Metal1 minimum width",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "M1.1#1",
+    "clause": "main",
+    "description": "Metal1 width",
+    "applies_when": {},
+    "expected": ">= 0.23 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "M1.1",
+    "deck_values": [
+     0.23
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2397,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2394,
+     "output_line": 2397,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2394-L2397",
+     "statements": [
+      {
+       "line": 2396,
+       "code": "m11_l1 = metal1.not(sramcore).width(0.23.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": [
+     "sramcore"
+    ]
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "M1.1"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.1",
+    "similarity": 1.0,
+    "header": "min. metal1 width is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2397"
+   },
+   {
+    "deck_rule_id": "S.M1.1_LV",
+    "similarity": 1.0,
+    "header": "min. metal1 width is 0.22µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L5016"
+   },
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 0.86,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "22_Metaln_58:L3",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "lines": "3-5",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L3-L5"
+   },
+   {
+    "chunk_id": "48_SRAM3_128:L9",
+    "file": "docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv",
+    "lines": "9-9",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/48_SRAM3_128.csv#L9-L9"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "M1.2a",
+  "title": "Metal1 minimum space",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "M1.2a#1",
+    "clause": "main",
+    "description": "Metal1 space",
+    "applies_when": {},
+    "expected": ">= 0.23 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "M1.2a",
+    "deck_values": [
+     0.23
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2403,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2400,
+     "output_line": 2403,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2400-L2403",
+     "statements": [
+      {
+       "line": 2402,
+       "code": "m12a_l1 = metal1.space(0.23.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "M1.2a"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 1.0,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   },
+   {
+    "deck_rule_id": "M1.1",
+    "similarity": 0.86,
+    "header": "min. metal1 width is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2397"
+   },
+   {
+    "deck_rule_id": "S.M1.1_LV",
+    "similarity": 0.86,
+    "header": "min. metal1 width is 0.22µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L5016"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "22_Metaln_58:L6",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "lines": "6-8",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L6-L8"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "M1.2b",
+  "title": "Metal1 space to wide Metal1",
+  "status": "REVIEW",
+  "reason": "implemented, but needs engineering judgement: BOUNDARY_MISMATCH",
+  "constraints": [
+   {
+    "constraint_id": "M1.2b#1",
+    "clause": "main",
+    "description": "Space to wide Metal1 (length & width > 10um)",
+    "applies_when": {
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "expected": ">= 0.3 um",
+    "coded_expected": true,
+    "flags": [
+     "BOUNDARY_MISMATCH"
+    ],
+    "deck_rule_id": "M1.2b",
+    "deck_values": [
+     0.3
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2409,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2406,
+     "output_line": 2409,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2406-L2409",
+     "statements": [
+      {
+       "line": 2408,
+       "code": "m12b_l1 = metal1.separation(metal1.not_interacting(metal1.edges.with_length(nil, 10.um)), 0.3.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "BOUNDARY_MISMATCH",
+    "constraint": "M1.2b#1",
+    "detail": "manual: wide = length & width > 10um; deck treats polygons whose edges are all >= 10um as wide (not_interacting(edges.with_length(nil, 10.um)))"
+   }
+  ],
+  "deck_candidates": [
+   "M1.2b"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.2b",
+    "similarity": 0.94,
+    "header": "Space to wide Metal1 (length & width > 10um) is 0.3µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2409"
+   },
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 0.76,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   },
+   {
+    "deck_rule_id": "M1.1",
+    "similarity": 0.73,
+    "header": "min. metal1 width is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2397"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "22_Metaln_58:L9",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "lines": "9-9",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L9-L9"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "M1.3",
+  "title": "Metal1 minimum area",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "M1.3#1",
+    "clause": "main",
+    "description": "Minimum Metal1 area",
+    "applies_when": {},
+    "expected": ">= 0.1444 um2",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "M1.3",
+    "deck_values": [
+     0.1444
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 2415,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2412,
+     "output_line": 2415,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2412-L2415",
+     "statements": [
+      {
+       "line": 2414,
+       "code": "m13_l1 = metal1.with_area(nil, 0.1444.um)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "M1.3"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.3",
+    "similarity": 1.0,
+    "header": "Minimum Metal1 area is 0.1444µm²",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2415"
+   },
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 0.8,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   },
+   {
+    "deck_rule_id": "M1.1",
+    "similarity": 0.73,
+    "header": "min. metal1 width is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2397"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "22_Metaln_58:L10",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L10-L10"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "M1.4",
+  "title": "Metal1 minimum density over die",
+  "status": "REVIEW",
+  "reason": "implemented, but needs engineering judgement: BOUNDARY_MISMATCH",
+  "constraints": [
+   {
+    "constraint_id": "M1.4#1",
+    "clause": "main",
+    "description": "Metal1 coverage over the entire die",
+    "applies_when": {
+     "region": "entire die"
+    },
+    "expected": "> 30 %",
+    "coded_expected": true,
+    "flags": [
+     "BOUNDARY_MISMATCH"
+    ],
+    "deck_rule_id": "M1.4",
+    "deck_values": [
+     30.0
+    ],
+    "text_similarity": 0.58,
+    "deck_output_line": 137,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu_density.drc",
+     "header_line": 135,
+     "output_line": 137,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu_density.drc#L135-L137",
+     "statements": [],
+     "context": [
+      "if ((metal1.area / CHIP.area)*100 < 30)"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "BOUNDARY_MISMATCH",
+    "constraint": "M1.4#1",
+    "detail": "manual requires > 30% but deck only flags density < 30.0% — exactly 30% passes the deck and fails the manual"
+   }
+  ],
+  "deck_candidates": [
+   "M1.4"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.4",
+    "similarity": 0.5,
+    "header": "Metal1 coverage over the entire die shall be >30% (Refer to section 13.0 for Dummy Metal fill guidelines. Customer needs to ensure enough dummy metal to satisfy Metal1 coverage)",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu_density.drc#L137"
+   },
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 0.46,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   },
+   {
+    "deck_rule_id": "M1.1",
+    "similarity": 0.43,
+    "header": "min. metal1 width is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2397"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "22_Metaln_58:L11",
+    "file": "docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv",
+    "lines": "11-15",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/22_Metaln_58.csv#L11-L15"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "V1.1",
+  "title": "Via1 min/max size",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "V1.1#1",
+    "clause": "main",
+    "description": "Via1 edge length is exactly 0.26",
+    "applies_when": {},
+    "expected": "== 0.26 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "V1.1",
+    "deck_values": [
+     0.26
+    ],
+    "text_similarity": 0.32,
+    "deck_output_line": 2537,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2534,
+     "output_line": 2537,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2534-L2537",
+     "statements": [
+      {
+       "line": 2536,
+       "code": "v11_l1 = via1.edges.without_length(0.26.um).extended(0, 0, 0.001, 0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   }
+  ],
+  "discrepancies": [],
+  "deck_candidates": [
+   "V1.1"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "V1.1",
+    "similarity": 0.74,
+    "header": "Min/max Via1 size . is 0.26µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2537"
+   },
+   {
+    "deck_rule_id": "V1.2a",
+    "similarity": 0.66,
+    "header": "min. via1 spacing is 0.26µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2543"
+   },
+   {
+    "deck_rule_id": "V1.2b",
+    "similarity": 0.5,
+    "header": "Via1 Space in 4x4 or larger via1 array is 0.36µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2552"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "23_Vian_59:L3",
+    "file": "docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv",
+    "lines": "3-3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv#L3-L3"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "V1.3",
+  "title": "Metal1 overlap of Via1",
+  "status": "MATCH",
+  "reason": "all mandatory clauses implemented with consistent values and operators",
+  "constraints": [
+   {
+    "constraint_id": "V1.3#1",
+    "clause": "main",
+    "description": "Metal1 overlap of Via1",
+    "applies_when": {},
+    "expected": ">= 0.0 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "V1.3a",
+    "deck_values": [
+     0.0
+    ],
+    "text_similarity": 0.51,
+    "deck_output_line": 2564,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2561,
+     "output_line": 2564,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2561-L2564",
+     "statements": [
+      {
+       "line": 2563,
+       "code": "v13a_l1 = via1.not_inside(metal1)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "V1.3#2",
+    "clause": "i",
+    "description": "Metal1 (< 0.34um) end-of-line overlap of Via1",
+    "applies_when": {
+     "metal_width": "< 0.34um",
+     "edge": "end-of-line",
+     "excluding": "metal branches shorter than 0.28um"
+    },
+    "expected": ">= 0.06 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "V1.3c",
+    "deck_values": [
+     0.06
+    ],
+    "text_similarity": 0.37,
+    "deck_output_line": 2574,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2571,
+     "output_line": 2574,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2571-L2574",
+     "statements": [
+      {
+       "line": 2569,
+       "code": "v1p3c_cond = metal1.drc( width <= 0.34.um).with_length(0.28.um,nil,both)"
+      },
+      {
+       "line": 2570,
+       "code": "v1p3c_eol = metal1.edges.with_length(nil, 0.34.um).interacting(v1p3c_cond.first_edges).interacting(v1p3c_cond.second_edges).not(v1p3c_cond.first_edges).not(v1p3c_cond.second_edges)"
+      },
+      {
+       "line": 2573,
+       "code": "v13c_l1 = v1p3c_eol.enclosing(via1.edges,0.06.um, projection).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "V1.3#3",
+    "clause": "ii",
+    "description": "If Metal1 overlaps Via1 by < 0.04um on one side, adjacent Metal1 edges overlap",
+    "applies_when": {
+     "condition": "one side overlap < 0.04um"
+    },
+    "expected": ">= 0.06 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "V1.3d",
+    "deck_values": [
+     0.06
+    ],
+    "text_similarity": 0.42,
+    "deck_output_line": 2587,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 2584,
+     "output_line": 2587,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2584-L2587",
+     "statements": [
+      {
+       "line": 2581,
+       "code": "v1_3d_1 = via1.edges.interacting(via1.drc(enclosed(metal1, projection) < 0.04.um).edges.centers(0, 0.5))"
+      },
+      {
+       "line": 2582,
+       "code": "v1_3d_2 = via1.edges.interacting(via1.drc(0.04.um <= enclosed(metal1, projection) < 0.06.um).centers(0, 0.5))"
+      },
+      {
+       "line": 2583,
+       "code": "v1_3d_3 = v1_3d_1.extended(0, 0, 0, 0.001, joined).corners(90)"
+      },
+      {
+       "line": 2586,
+       "code": "v13d_l1 = v1_3d_2.not_in(v1_3d_1).interacting(v1_3d_1).or(v1_3d_1.interacting(v1_3d_3)).enclosed(metal1.edges, 0.06.um).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL"
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "V1.3#4",
+    "clause": "iii",
+    "description": "Minimum Metal1 overlap of Via1 on all sides (guideline)",
+    "applies_when": {},
+    "expected": ">= 0.12 um",
+    "coded_expected": false,
+    "flags": [],
+    "status": "NOT_CODED_OK",
+    "deck_markers": [
+     "V1.3b",
+     "V1.3e"
+    ],
+    "deck_marker": "V1.3e"
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "DECK_VARIANT_DIVERGENCE",
+    "constraint": "V1.3#1",
+    "info": true,
+    "detail": "V1.3a: gf180mcu.drc uses `via1.not_inside(metal1)`, rule_decks/via1.drc uses `via1.not(metal1)`"
+   },
+   {
+    "type": "ORPHAN_DECK_SUBRULE",
+    "info": true,
+    "constraint": null,
+    "detail": "deck declares '# rule V1.3b is not a DRC check' but no extracted manual clause corresponds to it"
+   }
+  ],
+  "deck_candidates": [
+   "V1.3a",
+   "V1.3c",
+   "V1.3d"
+  ],
+  "deck_not_coded_markers": [
+   {
+    "rule_id": "V1.3b",
+    "line": 2567,
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2567"
+   },
+   {
+    "rule_id": "V1.3e",
+    "line": 2596,
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2596"
+   }
+  ],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "M1.2a",
+    "similarity": 0.64,
+    "header": "min. metal1 spacing is 0.23µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2403"
+   },
+   {
+    "deck_rule_id": "CO.6b",
+    "similarity": 0.63,
+    "header": "(ii) If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap is 0.06µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L2344"
+   },
+   {
+    "deck_rule_id": "S.CO.6_ii_LV",
+    "similarity": 0.63,
+    "header": "(ii) If Metal1 overlaps contact by < 0.04um on one side, adjacent metal1 edges overlap",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L5010"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "23_Vian_59:L6",
+    "file": "docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv",
+    "lines": "6-23",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/23_Vian_59.csv#L6-L23"
+   },
+   {
+    "chunk_id": "drm_07_15:L13",
+    "file": "docs/physical_verification/design_manual/drm_07_15.rst",
+    "lines": "13-13",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_15.rst#L13-L13"
+   },
+   {
+    "chunk_id": "70_not_coded_rules_187:L11",
+    "file": "docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv",
+    "lines": "11-11",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/70_not_coded_rules_187.csv#L11-L11"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "MT.1",
+  "title": "MetalTop minimum width",
+  "status": "PARTIAL",
+  "reason": "2/3 mandatory clauses/domains implemented",
+  "constraints": [
+   {
+    "constraint_id": "MT.1#1",
+    "clause": "main",
+    "description": "MetalTop width, 6K",
+    "applies_when": {
+     "metal_top_thickness": "6K"
+    },
+    "expected": ">= 0.36 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "MT.1",
+    "deck_values": [
+     0.36
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 3065,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 3062,
+     "output_line": 3065,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3062-L3065",
+     "statements": [
+      {
+       "line": 3064,
+       "code": "mt1_l1 = metaltop.width(0.36.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL",
+      "if METAL_TOP == \"6K\""
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "MT.1#2",
+    "clause": "main",
+    "description": "MetalTop width, 9K",
+    "applies_when": {
+     "metal_top_thickness": "9K"
+    },
+    "expected": ">= 0.44 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "MT.1",
+    "deck_values": [
+     0.44
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 3086,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 3083,
+     "output_line": 3086,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3083-L3086",
+     "statements": [
+      {
+       "line": 3085,
+       "code": "mt1_l1 = metaltop.width(0.44.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL",
+      "elsif METAL_TOP == \"9K\""
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "MT.1#3",
+    "clause": "main",
+    "description": "MetalTop width, 11K",
+    "applies_when": {
+     "metal_top_thickness": "11K"
+    },
+    "expected": ">= 0.44 um",
+    "coded_expected": true,
+    "flags": [],
+    "status": "NOT_FOUND"
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "NOT_FOUND",
+    "constraint": "MT.1#3",
+    "detail": "no deck check for MetalTop width, 11K (metal_top_thickness=11K)"
+   }
+  ],
+  "deck_candidates": [
+   "MT.1"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "MT.1",
+    "similarity": 1.0,
+    "header": "min. metaltop width is 0.36µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3065"
+   },
+   {
+    "deck_rule_id": "MT.1",
+    "similarity": 1.0,
+    "header": "min. metaltop width is 0.44µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3086"
+   },
+   {
+    "deck_rule_id": "MT.2a",
+    "similarity": 0.84,
+    "header": "min. metaltop spacing is 0.38µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3071"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "24_MetalTop_61:L3",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "lines": "3-3",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L3-L3"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "MT.2a",
+  "title": "MetalTop minimum space",
+  "status": "PARTIAL",
+  "reason": "2/3 mandatory clauses/domains implemented",
+  "constraints": [
+   {
+    "constraint_id": "MT.2a#1",
+    "clause": "main",
+    "description": "MetalTop space, 6K",
+    "applies_when": {
+     "metal_top_thickness": "6K"
+    },
+    "expected": ">= 0.38 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "MT.2a",
+    "deck_values": [
+     0.38
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 3071,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 3068,
+     "output_line": 3071,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3068-L3071",
+     "statements": [
+      {
+       "line": 3070,
+       "code": "mt2a_l1 = metaltop.space(0.38.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL",
+      "if METAL_TOP == \"6K\""
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "MT.2a#2",
+    "clause": "main",
+    "description": "MetalTop space, 9K",
+    "applies_when": {
+     "metal_top_thickness": "9K"
+    },
+    "expected": ">= 0.46 um",
+    "coded_expected": true,
+    "flags": [],
+    "deck_rule_id": "MT.2a",
+    "deck_values": [
+     0.46
+    ],
+    "text_similarity": 1.0,
+    "deck_output_line": 3092,
+    "deck_evidence": {
+     "file": "rules/klayout/drc/gf180mcu.drc",
+     "header_line": 3089,
+     "output_line": 3092,
+     "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3089-L3092",
+     "statements": [
+      {
+       "line": 3091,
+       "code": "mt2a_l1 = metaltop.space(0.46.um, euclidian).polygons(0.001)"
+      }
+     ],
+     "context": [
+      "if BEOL",
+      "elsif METAL_TOP == \"9K\""
+     ]
+    },
+    "status": "IMPLEMENTED",
+    "explained_exclusions": []
+   },
+   {
+    "constraint_id": "MT.2a#3",
+    "clause": "main",
+    "description": "MetalTop space, 11K",
+    "applies_when": {
+     "metal_top_thickness": "11K"
+    },
+    "expected": ">= 0.46 um",
+    "coded_expected": true,
+    "flags": [],
+    "status": "NOT_FOUND"
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "NOT_FOUND",
+    "constraint": "MT.2a#3",
+    "detail": "no deck check for MetalTop space, 11K (metal_top_thickness=11K)"
+   }
+  ],
+  "deck_candidates": [
+   "MT.2a"
+  ],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "MT.2a",
+    "similarity": 1.0,
+    "header": "min. metaltop spacing is 0.38µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3071"
+   },
+   {
+    "deck_rule_id": "MT.2a",
+    "similarity": 1.0,
+    "header": "min. metaltop spacing is 0.46µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3092"
+   },
+   {
+    "deck_rule_id": "MT.1",
+    "similarity": 0.84,
+    "header": "min. metaltop width is 0.36µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3065"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "24_MetalTop_61:L4",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "lines": "4-4",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L4-L4"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ },
+ {
+  "rule_id": "MT.2b",
+  "title": "MetalTop space between wide MetalTop",
+  "status": "MISSING",
+  "reason": "no deck implementation found for any mandatory clause",
+  "constraints": [
+   {
+    "constraint_id": "MT.2b#1",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 6K",
+    "applies_when": {
+     "metal_top_thickness": "6K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "expected": ">= 0.5 um",
+    "coded_expected": true,
+    "flags": [],
+    "status": "NOT_FOUND"
+   },
+   {
+    "constraint_id": "MT.2b#2",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 9K",
+    "applies_when": {
+     "metal_top_thickness": "9K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "expected": ">= 0.6 um",
+    "coded_expected": true,
+    "flags": [],
+    "status": "NOT_FOUND"
+   },
+   {
+    "constraint_id": "MT.2b#3",
+    "clause": "main",
+    "description": "Space between wide MetalTop, 11K",
+    "applies_when": {
+     "metal_top_thickness": "11K",
+     "wide_metal": {
+      "dimension": "length & width",
+      "operator": ">",
+      "value": 10,
+      "unit": "um"
+     }
+    },
+    "expected": ">= 0.6 um",
+    "coded_expected": true,
+    "flags": [],
+    "status": "NOT_FOUND"
+   }
+  ],
+  "discrepancies": [
+   {
+    "type": "NOT_FOUND",
+    "constraint": "MT.2b#1",
+    "detail": "no deck check for Space between wide MetalTop, 6K (metal_top_thickness=6K)"
+   },
+   {
+    "type": "NOT_FOUND",
+    "constraint": "MT.2b#2",
+    "detail": "no deck check for Space between wide MetalTop, 9K (metal_top_thickness=9K)"
+   },
+   {
+    "type": "NOT_FOUND",
+    "constraint": "MT.2b#3",
+    "detail": "no deck check for Space between wide MetalTop, 11K (metal_top_thickness=11K)"
+   }
+  ],
+  "deck_candidates": [],
+  "deck_not_coded_markers": [],
+  "semantic_neighbours": [
+   {
+    "deck_rule_id": "MT.2a",
+    "similarity": 0.6,
+    "header": "min. metaltop spacing is 0.38µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3071"
+   },
+   {
+    "deck_rule_id": "MT.2a",
+    "similarity": 0.6,
+    "header": "min. metaltop spacing is 0.46µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3092"
+   },
+   {
+    "deck_rule_id": "MT.1",
+    "similarity": 0.51,
+    "header": "min. metaltop width is 0.36µm",
+    "url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_pr/blob/9f992d5a9186d1f7820c58f039c484ad35b2edea/rules/klayout/drc/gf180mcu.drc#L3065"
+   }
+  ],
+  "manual_evidence": [
+   {
+    "chunk_id": "24_MetalTop_61:L5",
+    "file": "docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv",
+    "lines": "5-5",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/tables_clear/24_MetalTop_61.csv#L5-L5"
+   },
+   {
+    "chunk_id": "drm_07_16:L10",
+    "file": "docs/physical_verification/design_manual/drm_07_16.rst",
+    "lines": "10-10",
+    "url": "https://github.com/google/gf180mcu-pdk/blob/de3240d7529a6970437ac3344820aaae7839f215/docs/physical_verification/design_manual/drm_07_16.rst#L10-L10"
+   }
+  ],
+  "deck_commit": "9f992d5a9186d1f7820c58f039c484ad35b2edea"
+ }
+]

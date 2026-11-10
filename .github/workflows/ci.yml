@@ -1,0 +1,27 @@
+name: ai-pdk
+on: [push, pull_request]
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: ./scripts/setup_sources.sh
+      - run: python -m ai_pdk.run --skip-tests
+      - run: python -m pytest -q tests/ -k "not disagreeing"
+  layout-tests:
+    runs-on: ubuntu-24.04
+    needs: static
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update && sudo apt-get install -y klayout
+      - run: pip install -r requirements.txt
+      - run: ./scripts/setup_sources.sh
+      - run: python -m ai_pdk.run
+      - run: python -m pytest -q tests/
+      - uses: actions/upload-artifact@v4
+        with: { name: report, path: out/report.html }

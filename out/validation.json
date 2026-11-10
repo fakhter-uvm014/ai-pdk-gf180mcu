@@ -1,0 +1,962 @@
+[
+ {
+  "rule_id": "PL.1",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "PROVENANCE",
+  "ok": false,
+  "detail": "16_Poly2_42:L3: hash mismatch"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "7 quotes found verbatim"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "PL.1",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "6 source spans verified"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "14 quotes found verbatim"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "PL.2",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "3 source spans verified"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "4 quotes found verbatim"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "NOT_CODED",
+  "ok": false,
+  "detail": "unsupported: PL.3b#1, PL.3b#2, PL.3b#3"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "PL.3b",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "4 source spans verified"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "7 quotes found verbatim"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "PL.5b",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "2 quotes found verbatim"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "PL.8",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "QUOTE",
+  "ok": false,
+  "detail": "21_Contact_56:L3: 'Min contact size 0.22'"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "CO.1",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "2 quotes found verbatim"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "CO.2a",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "2 source spans verified"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "2 quotes found verbatim"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "CO.3",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "4 source spans verified"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "13 quotes found verbatim"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "CO.6",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "1 quotes found verbatim"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "CO.11",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "2 source spans verified"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "2 quotes found verbatim"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "GROUNDING",
+  "ok": false,
+  "detail": "M1.1#1 value 0.25 not in its quotes"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "M1.1",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "1 quotes found verbatim"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "M1.2a",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "1 quotes found verbatim"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "M1.2b",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "1 quotes found verbatim"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "M1.3",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "2 quotes found verbatim"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "M1.4",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "1 source spans verified"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "1 quotes found verbatim"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "V1.1",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "3 source spans verified"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "11 quotes found verbatim"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "V1.3",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "2 source spans verified"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "5 quotes found verbatim"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "MT.1",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "2 source spans verified"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "5 quotes found verbatim"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "MT.2a",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "SCHEMA",
+  "ok": true,
+  "detail": "conforms"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "PROVENANCE",
+  "ok": true,
+  "detail": "2 source spans verified"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "QUOTE",
+  "ok": true,
+  "detail": "5 quotes found verbatim"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "GROUNDING",
+  "ok": true,
+  "detail": "all values grounded in cited text"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "NOT_CODED",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "OPERATOR",
+  "ok": true,
+  "detail": "ok"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "LAYER_MAP",
+  "ok": true,
+  "detail": "GDS numbers agree"
+ },
+ {
+  "rule_id": "MT.2b",
+  "check": "STALE",
+  "ok": true,
+  "detail": "recording matches current context"
+ }
+]
